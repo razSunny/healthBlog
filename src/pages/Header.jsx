@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Blog", href: "/blog", current: false },
   { name: "Workouts", href: "/workouts", current: false },
   { name: "Nutrition", href: "/nutrition", current: false },
   { name: "Health Tips", href: "/health-tips", current: false },
@@ -44,12 +43,13 @@ const Header = () => {
           </div>
           <div className="flex flex-1 items-center justify-center md:justify-between">
             <div className="flex flex-shrink-0 items-center">
-              <h1 className="text-xl font-bold text-gray-800">Health & Gym</h1>
+              <h1 className="text-xl font-bold text-sky-900">Health & Gym</h1>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {navigation.map((item, index) => (
                   <Link
+                    key={index}
                     to={item.href}
                     className={classNames(
                       item.current
@@ -69,8 +69,9 @@ const Header = () => {
 
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          {navigation.map((item) => (
+          {navigation.map((item, index) => (
             <Link
+              key={index}
               to={item.href}
               className={classNames(
                 item.current
