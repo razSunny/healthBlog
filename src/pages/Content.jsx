@@ -1,17 +1,19 @@
+import {lazy} from "react";
 import gymBackgroundImage from "../assets/realGymBackground.jpg";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+const Workout = lazy(()=>import('./Workout.jsx'))
+
 const Main = () => {
   return (
     <div className="main-container">
       <div className="relative content">
         <div className="w-full mx-auto">
-          {/* Image */}
-          <img
-            width={100}
+          <LazyLoadImage
             src={gymBackgroundImage}
             alt="GymBackgroundImage"
-            className="w-full h-auto object-cover"
+            effect="blur"
           />
-
           {/* Text overlay */}
           <div className="absolute w-full inset-0 flex flex-col items-center justify-start mt-6 sm:mt-40">
             <p
@@ -37,7 +39,10 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className="p-4 text-justify">
+      <div>
+      <Workout/>
+      </div>
+      {/* <div className="p-4 text-justify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur
         adipisci quasi explicabo aspernatur deleniti numquam cupiditate eum,
         laborum quae inventore iste expedita quis temporibus exercitationem
@@ -151,7 +156,7 @@ const Main = () => {
         quia mollitia enim aspernatur obcaecati ullam aperiam omnis cupiditate
         nulla eveniet voluptatibus, quaerat laudantium cumque. Iure rerum ipsam
         dolores amet repellat voluptates error aperiam numquam.
-      </div>
+      </div> */}
     </div>
   );
 };
