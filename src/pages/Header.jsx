@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Workouts", href: "/workouts", current: false },
-  { name: "Nutrition", href: "/nutrition", current: false },
-  { name: "Health Tips", href: "/health-tips", current: false },
-  { name: "About Us", href: "/about-us", current: false },
+  { name: "Workouts", href: "/#workouts", current: false },
+  { name: "Nutrition", href: "/#nutrition", current: false },
+  { name: "Health Tips", href: "/#health-tips", current: false },
+  { name: "About Us", href: "/#about-us", current: false },
 ];
 
 function classNames(...classes) {
